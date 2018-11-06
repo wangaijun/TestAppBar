@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        /*导航栏*/
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
@@ -23,11 +25,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     .setAction("Action", null).show()
         }
 
+        /*抽屉布局*/
         val toggle = ActionBarDrawerToggle(
                 this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
+        /*抽屉布局中的导航视图*/
         nav_view.setNavigationItemSelectedListener(this)
     }
 
